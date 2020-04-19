@@ -5,7 +5,11 @@ import java.awt.event.*;
 import javax.swing.*;
 import java.sql.*;
 
-public class Withdrawl extends JFrame implements ActionListener{
+public class Withdrawl{
+    
+    JFrame jf = new JFrame("WithDrawl");
+    Container c = jf.getContentPane();
+    JPanel p = new JPanel();
     
     JLabel l1,l2,l3,l4,l5;
     JTextField t1,t2;
@@ -13,7 +17,7 @@ public class Withdrawl extends JFrame implements ActionListener{
     
     public void Withdrawl()
     {
-     setFont(new Font("System", Font.BOLD ,22));
+  /*   setFont(new Font("System", Font.BOLD ,22));
         Font f = getFont();
         FontMetrics fm =getFontMetrics(f);
         int x = fm.stringWidth("WITHDRAWL");
@@ -23,7 +27,7 @@ public class Withdrawl extends JFrame implements ActionListener{
         String pad ="";
         pad  = String.format("%", w, "s",pad);
         setTitle(pad+"WITHDRAWL");
-        
+    */    
         l4= new JLabel("MAXIMUM DAILY WITHDRAWL");
         l4.setFont(new Font("System",Font.BOLD,40));
                 
@@ -60,50 +64,65 @@ public class Withdrawl extends JFrame implements ActionListener{
         b3.setBackground(Color.BLACK);
         b3.setForeground(Color.WHITE);
         
-        setLayout(null);
+        p.setLayout(null);
         
         l3.setBounds(620, 10, 80, 20);
-        add(l3);
+        p.add(l3);
         
         t2.setBounds(700, 10, 40, 30);
-        add(t2);
+        p.add(t2);
         
         l4.setBounds(90, 100, 800, 60);
-        add(l4);
+        p.add(l4);
         
         l5.setBounds(270, 160, 800, 60);
-        add(l5);
+        p.add(l5);
         
         l1.setBounds(150, 150, 80, 60);
-        add(l1);
+        p.add(l1);
         
         l2.setBounds(290, 210, 800, 60);
-        add(l2);
+        p.add(l2);
         
         t1.setBounds(250, 300, 300, 50);
-        add(t1);
+        p.add(t1);
         
         b1.setBounds(260, 380, 125, 50);
-        add(b1);
+        p.add(b1);
         
         b2.setBounds(415, 380, 125, 50);
-        add(b2);
+        p.add(b2);
         
         b3.setBounds(300, 550, 200, 50);
-        add(b3);
+        p.add(b3);
         
-        getContentPane().setBackground(Color.WHITE);
+       
         
-        b1.addActionListener(this);
-        b2.addActionListener(this);
-        b3.addActionListener(this);
+       //b1.addActionListener(this);
+       //b2.addActionListener(this);
+       //b3.addActionListener(this);
         
-        setSize(800, 800);
-        setLocation(500, 90);
-        setVisible(true);   
+        jf.setBackground(Color.WHITE);
+        jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        jf.setSize(850, 850);
+        jf.setLocation(500, 90);
+        jf.setVisible(true);
+        
+        c.add(p);  
         
     }
     
+    
+    public static void main(String args[])
+    {
+        Withdrawl z = new Withdrawl();
+        z.Withdrawl();
+    }
+    
+}
+
+    
+  /*  
     public void actionPerformed(ActionEvent ae)
     {
         try
@@ -157,10 +176,4 @@ public class Withdrawl extends JFrame implements ActionListener{
             System.out.println("error: "+e);
         }
     }
-    
-    public static void main(String args[])
-    {
-        new Withdrawl().setVisible(true);
-    }
-    
-}
+    */

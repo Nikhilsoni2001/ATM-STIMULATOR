@@ -1,19 +1,21 @@
 package atm.simulator;
 
 import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
-import java.sql.*;
+//import java.sql.*;
 
-public class Deposit extends JFrame implements ActionListener{
+public class Deposit {  
+
+    public void Deposit(){
+         JFrame jf = new JFrame("Deposit");
+         Container c = jf.getContentPane();
+         JPanel p = new JPanel();
     
-    JLabel l1,l2,l3;
-    JTextField t1,t2;
-    JButton b1,b2,b3; 
-   
-    public void deposit()
-    {
-        setFont(new Font("System", Font.BOLD ,22));
+         JLabel l1,l2,l3;
+        JTextField t1,t2;
+        JButton b1,b2,b3; 
+ 
+       /* setFont(new Font("System", Font.BOLD ,22));
         Font f = getFont();
         FontMetrics fm =getFontMetrics(f);
         int x = fm.stringWidth("DEPOSIT");
@@ -23,7 +25,7 @@ public class Deposit extends JFrame implements ActionListener{
         String pad ="";
         pad  = String.format("%", w, "s",pad);
         setTitle(pad+"DEPOSIT");
-        
+        */
         l1= new JLabel("ENTER AMOUNT YOU WANT ");
         l1.setFont(new Font("System",Font.BOLD,35));
                 
@@ -54,45 +56,74 @@ public class Deposit extends JFrame implements ActionListener{
         b3.setBackground(Color.BLACK);
         b3.setForeground(Color.WHITE);
         
-        setLayout(null);
+        p.setLayout(null);
         
         l3.setBounds(620, 10, 80, 20);
-        add(l3);
+        p.add(l3);
         
         t2.setBounds(700, 10, 40, 30);
-        add(t2);
+        p.add(t2);
         
         l1.setBounds(150, 150, 80, 60);
-        add(t1);
+        p.add(t1);
         
         l2.setBounds(290, 210, 800, 60);
-        add(l2);
+        p.add(l2);
         
         t1.setBounds(250, 300, 300, 50);
-        add(t1);
+        p.add(t1);
         
         b1.setBounds(260, 380, 125, 50);
-        add(b1);
+        p.add(b1);
         
         b2.setBounds(415, 380, 125, 50);
-        add(b2);
+        p.add(b2);
         
         b3.setBounds(300, 550, 200, 50);
-        add(b3);
+        p.add(b3);
         
-        getContentPane().setBackground(Color.WHITE);
+        c.add(p);
         
-        b1.addActionListener(this);
-        b2.addActionListener(this);
-        b3.addActionListener(this);
+        jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        jf.setBackground(Color.WHITE);
         
-        setSize(800, 800);
-        setLocation(500, 90);
-        setVisible(true);
+        //b1.addActionListener(this);
+        //b2.addActionListener(this);
+        //b3.addActionListener(this);
         
-    }
-    
-    public void actionPerformed(ActionEvent ae)
+        jf.setVisible(true);
+        jf.setSize(800,800);
+        jf.setLocation(500, 90);
+        
+        
+        c.add(p);
+        }
+        public static void main(String args[])
+        {
+            Deposit z = new Deposit();
+            z.Deposit();
+        }   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   /* public void actionPerformed(ActionEvent ae)
     {
         try
         {
@@ -144,11 +175,6 @@ public class Deposit extends JFrame implements ActionListener{
             e.printStackTrace();
             System.out.println("error: "+e);
         }
-    }
     
-    public static void main(String args[])
-    {
-        new Deposit().setVisible(true);
-    }
     
 }

@@ -1,27 +1,32 @@
 package atm.simulator;
 
 import java.awt.*;
-import java.awt.event.*;
+//import java.awt.event.*;
 import javax.swing.*;
-import java.sql.*;
+//import java.sql.*;
 
-public class Login extends JFrame implements ActionListener {
+public class Login /*extends JFrame implements ActionListener */{
+        
 
-    JLabel l1,l2,l3;
-    JTextField tf1;
-    JPasswordField pf1;
-    JButton b1,b2,b3;
+        JFrame jf = new JFrame("Login");
+        Container c = jf.getContentPane();
+        JPanel p = new JPanel();
+        
+        JLabel l1,l2,l3;
+        JTextField tf1;
+        JPasswordField pf1;
+        JButton b1,b2,b3;
     
-    public Login()
-    {
+        public void Login()
+        {
         l1=new JLabel("WELCOME TO ATM");
         l1.setFont(new Font("Ostward",Font.BOLD,30));
         
         l2=new JLabel("CARD NO.");
         l2.setFont(new Font("Raleway",Font.BOLD,20));
         
-        l1=new JLabel("PIN");
-        l1.setFont(new Font("Raleway",Font.BOLD,20));
+        l3=new JLabel("PIN");
+        l3.setFont(new Font("Raleway",Font.BOLD,20));
         
         tf1=new JTextField(16);
         pf1=new JPasswordField(4);
@@ -39,48 +44,54 @@ public class Login extends JFrame implements ActionListener {
         b3.setBackground(Color.black);
         b3.setForeground(Color.white);
         
-        setLayout(null);        
+        p.setLayout(null);        
         
         l1.setBounds(175, 50,450, 200);
-        add(l1);
+        p.add(l1);
         
-        l1.setBounds(125, 150,375, 200);
-        add(l2);
+        l2.setBounds(125, 150,375, 200);
+        p.add(l2);
         
-        l1.setBounds(125, 225, 375, 200);
-        add(l3);
+        l3.setBounds(125, 225, 375, 200);
+        p.add(l3);
         
         tf1.setFont(new Font("ARIAL",Font.BOLD,14));
-        add(tf1);
+        tf1.setBounds(300, 240, 230, 30);
+        p.add(tf1);
         
         pf1.setFont(new Font("ARIAL",Font.BOLD,14));
         pf1.setBounds(300, 310, 230, 30);
-        add(pf1);
+        p.add(pf1);
         
         b1.setFont(new Font("ARIAL",Font.BOLD,14));
         b1.setBounds(300, 400, 100, 30);
-        add(b1);
+        p.add(b1);
         
         b2.setFont(new Font("ARIAL",Font.BOLD,14));
         b2.setBounds(430, 400, 100, 30);
-        add(b2);
+        p.add(b2);
         
         b3.setFont(new Font("ARIAL",Font.BOLD,14));
         b3.setBounds(300, 450, 230, 30);
-        add(b3);
+        p.add(b3);
         
-        b1.addActionListener(this);
-        b2.addActionListener(this);
-        b3.addActionListener(this);
+        //b1.addActionListener(this);
+        //b2.addActionListener(this);
+        //b3.addActionListener(this);
         
-        getContentPane().setBackground(Color.white);
+        jf.setBackground(Color.WHITE);
+        jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        jf.setSize(800, 800);
+        jf.setLocation(500, 90);
+        jf.setVisible(true);
         
-        setSize(750, 750);
-        setLocation(500, 200);
-        setVisible(true);
-        
-    }
-    
+        c.add(p);
+        }  
+        public static void main(String args[]){
+            Login z = new Login();
+            z.Login();
+    }}
+    /*
     public void actionPerformed(ActionEvent ae)
     {
         try
@@ -121,7 +132,5 @@ public class Login extends JFrame implements ActionListener {
                 {
                     e.printStackTrace();
                     System.out.println("error: "+e);
-                }
-    }
-}
-   
+                }*/
+    

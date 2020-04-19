@@ -5,14 +5,18 @@ import java.awt.event.*;
 import javax.swing.*;
 import java.sql.*;
 
-public class Pin extends JFrame implements ActionListener {
+public class Pin  {
 
+    JFrame jf = new JFrame("Login");
+    Container c = jf.getContentPane();
+    JPanel p = new JPanel();
+        
     JLabel l1,l2,l3,l4;
     JTextField t1,t2,t3;
     JButton b1,b2;
     public void pin()
     {
-        setFont(new Font("System", Font.BOLD ,22));
+        /*setFont(new Font("System", Font.BOLD ,22));
         Font f = getFont();
         FontMetrics fm =getFontMetrics(f);
         int x = fm.stringWidth("PIN");
@@ -22,27 +26,28 @@ public class Pin extends JFrame implements ActionListener {
         String pad ="";
         pad  = String.format("%", w, "s",pad);
         setTitle(pad+"PIN");
+        */
         
         l1= new JLabel("CHANGE YOUR PIN");
         l1.setFont(new Font("System",Font.BOLD,35));
                 
         l2=new JLabel("Current Pin:");
-        l2.setFont(new Font("System",Font.BOLD,35));
+        l2.setFont(new Font("System",Font.BOLD,20));
         
         l3=new JLabel("New Pin:");
-        l3.setFont(new Font("System",Font.BOLD,14));
+        l3.setFont(new Font("System",Font.BOLD,20));
         
         l4=new JLabel("Re-Enter New Pin:");
-        l4.setFont(new Font("System",Font.BOLD,14));
+        l4.setFont(new Font("System",Font.BOLD,20));
         
         t1=new JTextField();
-        t1.setFont(new Font("System",Font.BOLD,22));
+        t1.setFont(new Font("System",Font.BOLD,18));
         
         t2=new JTextField();
-        t2.setFont(new Font("System",Font.BOLD,14));
+        t2.setFont(new Font("System",Font.BOLD,18));
         
         t3=new JTextField();
-        t3.setFont(new Font("System",Font.BOLD,14));
+        t3.setFont(new Font("System",Font.BOLD,18));
         
         b1=new JButton("SAVE");
         b1.setFont(new Font("System",Font.BOLD,18));
@@ -54,44 +59,57 @@ public class Pin extends JFrame implements ActionListener {
         b2.setBackground(Color.BLACK);
         b2.setForeground(Color.WHITE);
         
-      setLayout(null);
+        p.setLayout(null);
       
         l1.setBounds(220, 130, 800, 60);
-        add(l1);
+        p.add(l1);
         
         l2.setBounds(100, 240, 150, 40);
-        add(l2);
+        p.add(l2);
         
         l3.setBounds(100, 300, 150, 40);
-        add(l3);
+        p.add(l3);
         
         l4.setBounds(100, 360, 200, 40);
-        add(l4);
+        p.add(l4);
         
         t1.setBounds(310, 240, 360, 40);
-        add(t1);
+        p.add(t1);
         
         t2.setBounds(310, 300, 360, 40);
-        add(t2);
+        p.add(t2);
         
         t3.setBounds(310, 360, 360, 40);
-        add(t3);
+        p.add(t3);
         
         b1.setBounds(220, 460, 160, 50);
-        add(b1);
+        p.add(b1);
         
         b2.setBounds(400, 460, 160, 50);
-        add(b2);
+        p.add(b2);
         
         
-        getContentPane().setBackground(Color.WHITE);
+        jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        jf.setSize(800, 800);
+        jf.setLocation(500, 90);
+        jf.setVisible(true);
+        jf.setBackground(Color.WHITE);
+        jf.setVisible(true);
+        c.add(p);
         
-        b1.addActionListener(this);
-        b2.addActionListener(this);
-        
+  //      b1.addActionListener(this);
+    //    b2.addActionListener(this);
+    }    
+
+    public static void main(String args[])
+    {
+         Pin z = new Pin();
+         z.pin();
     }
+}
+
     
-    public void actionPerformed(ActionEvent ae)
+   /* public void actionPerformed(ActionEvent ae)
     {
         try
         {
@@ -146,8 +164,6 @@ public class Pin extends JFrame implements ActionListener {
             System.out.println("error: "+e);
         }
     }
-    public static void main(String args)
-    {
-        new Pin().setVisible(true);
-    }
+    
 }
+*/

@@ -6,7 +6,11 @@ import javax.swing.*;
 import java.sql.*;
 import java.util.*;
 
-public class SignUp3 extends JFrame implements ActionListener{
+public class SignUp3 {
+    
+    JFrame jf = new JFrame("SignUp3");
+    Container c = jf.getContentPane();
+    JPanel p = new JPanel();
     
     JLabel l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11;
     JRadioButton r1,r2,r3,r4;
@@ -16,7 +20,7 @@ public class SignUp3 extends JFrame implements ActionListener{
     
     public void SignUp3()
     {
-        setFont(new Font("System", Font.BOLD ,22));
+/*        setFont(new Font("System", Font.BOLD ,22));
         Font f = getFont();
         FontMetrics fm =getFontMetrics(f);
         int x = fm.stringWidth("NEW ACCOUNT APPLICATION FORM Page 3");
@@ -26,7 +30,7 @@ public class SignUp3 extends JFrame implements ActionListener{
         String pad ="";
         pad  = String.format("%", w, "s",pad);
         setTitle(pad+"NEW ACCOUNT APPLICATION FORM Page 3");
-       
+  */     
         
         l1= new JLabel("Page 3: Account Details");
         l1.setFont(new Font("Raleway",Font.BOLD,22));
@@ -127,98 +131,110 @@ public class SignUp3 extends JFrame implements ActionListener{
         t1.setFont(new Font("Raleway",Font.BOLD,12));
         
         
-        setLayout(null);
+        p.setLayout(null);
         
         l11.setBounds(700, 10, 70, 30);
-        add(l11);
+        p.add(l11);
         
         t1.setBounds(770, 10, 40, 30);
-        add(t1);
+        p.add(t1);
         
         l1.setBounds(280, 50, 400, 40);
-        add(l1);
+        p.add(l1);
         
         l2.setBounds(100, 140, 200, 30);
-        add(l2);
+        p.add(l2);
         
         r1.setBounds(350, 180, 150, 30);
-        add(r1);
+        p.add(r1);
         
         r2.setBounds(350, 180, 300, 30);
-        add(r2);
+        p.add(r2);
         
         r3.setBounds(100, 200, 250, 30);
-        add(r3);
+        p.add(r3);
         
         r4.setBounds(350, 220, 250, 30);
-        add(r4);
+        p.add(r4);
         
         l3.setBounds(100, 300, 200, 30);
-        add(l3);
+        p.add(l3);
         
         l4.setBounds(330, 300, 250, 30);
-        add(l4);
+        p.add(l4);
         
         l5.setBounds(100, 330, 200, 20);
-        add(l5);
+        p.add(l5);
         
         l6.setBounds(330, 330, 500, 20);
-        add(l6);
+        p.add(l6);
         
         l7.setBounds(100, 370, 200, 30);
-        add(l7);
+        p.add(l7);
         
         l8.setBounds(330, 370, 200, 30);
-        add(l8);
+        p.add(l8);
         
         l8.setBounds(330,370,200,30);
-        add(l8);
+        p.add(l8);
         
         l9.setBounds(100, 400, 200, 20);
-        add(l9);
+        p.add(l9);
         
         l10.setBounds(100, 450, 200, 30);
-        add(l10);
+        p.add(l10);
         
         c1.setBounds(100, 500, 200, 30);
-        add(c1);
+        p.add(c1);
         
         c2.setBounds(350, 500, 200, 30);
-        add(c2);
+        p.add(c2);
         
         c3.setBounds(100, 550, 200, 30);
-        add(c3);
+        p.add(c3);
         
         c4.setBounds(350, 600, 200, 30);
-        add(c4);
+        p.add(c4);
         
         c5.setBounds(350, 720, 100, 30);
-        add(c5);
+        p.add(c5);
         
         c6.setBounds(350, 600, 200, 30);
-        add(c6);
+        p.add(c6);
         
         c7.setBounds(300, 600, 600, 20);
-        add(c7);
+        p.add(c7);
         
         b1.setBounds(300, 720, 100, 30);
-        add(b1);
+        p.add(b1);
         
         b2.setBounds(420, 720, 100, 30);
-        add(b2);
+        p.add(b2);
         
-        getContentPane().setBackground(Color.WHITE);
         
-        setSize(850, 850);
-        setLocation(500, 90);
-        setVisible(true);
         
-        b1.addActionListener(this);
-        b2.addActionListener(this);
+        jf.setBackground(Color.WHITE);
+        jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        jf.setSize(800, 800);
+        jf.setLocation(500, 90);
+        jf.setVisible(true);
+        
+        c.add(p);
+        //b1.addActionListener(this);
+        //b2.addActionListener(this);
         
     }
     
-    public void actionPerformed(ActionEvent ae)
+    
+    public static void main(String args[])
+    {
+        SignUp3 z = new SignUp3();
+        z.SignUp3();
+    }
+    
+}
+
+  /*  public void actionPerformed(ActionEvent ae)
     {
         String a =null;
         if(r1.isSelected())
@@ -306,10 +322,4 @@ public class SignUp3 extends JFrame implements ActionListener{
             System.out.println("error: "+e);
         }
     }
-    
-    public static void main(String args[])
-    {
-        new SignUp3().setVisible(true);
-    }
-    
-}
+    */

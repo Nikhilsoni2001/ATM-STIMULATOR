@@ -1,14 +1,17 @@
 package atm.simulator;
 
 import java.awt.*;
-import java.awt.Event.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 import javax.swing.*;
 import java.sql.*;
-import java.util.*;
 
-public class SignUp extends JFrame implements ActionListener {
+
+public class SignUp {
+    
+     JFrame jf = new JFrame("SignUp");
+    Container c = jf.getContentPane();
+    JPanel p = new JPanel();
+    
     JLabel l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,l14,l15;
     JTextField tf1,tf2,tf3,tf4,tf5,tf6,tf7;
     JRadioButton r1,r2,r3,r4,r5;
@@ -16,15 +19,15 @@ public class SignUp extends JFrame implements ActionListener {
     JComboBox c1,c2,c3;
     
     
-    Random rn = new Random();                                   //generates random number
+    /*Random rn = new Random();                                   //generates random number
     long first4 = (rn.nextLong() % 9000L)+1000L;
     long first = Math.abs(first4);
-    
-    SignUp()
+    */
+    public void SignUp()
     {
         //to move text to center
         
-        setFont(new Font("System",Font.BOLD,22));
+      /*  setFont(new Font("System",Font.BOLD,22));
         Font f = getFont();
         FontMetrics fm =getFontMetrics(f);
         int x = fm.stringWidth("NEW ACCOUNT APPLICATION FORM");
@@ -34,8 +37,9 @@ public class SignUp extends JFrame implements ActionListener {
         String pad ="";
         pad  = String.format("%", w, "s",pad);
         setTitle(pad+"NEW ACCOUNT APPLICATION FORM");
+        */
         
-        l1 = new JLabel("APPLICATION FORM NO. "+first);
+        l1 = new JLabel("APPLICATION FORM NO. ");
         l1.setFont(new Font("Raleway",Font.BOLD,30));
         
         l2 = new JLabel("Page 1: Personal Details");
@@ -131,119 +135,129 @@ public class SignUp extends JFrame implements ActionListener {
         c1.setBackground(Color.WHITE);
         
         String month[]={"January","February","March","April","May","June","July","August","September","October","November","December"};
-        c1= new JComboBox(month);
-        c1.setBackground(Color.WHITE);
+        c2= new JComboBox(month);
+        c2.setBackground(Color.WHITE);
         
         String year[]={"1993","1994","1995","1996","1997","1998","1999","2000","2001","2002"};
-        c1= new JComboBox(year);
-        c1.setBackground(Color.WHITE);
+        c3= new JComboBox(year);
+        c3.setBackground(Color.WHITE);
         
-        setLayout(null);
+        p.setLayout(null);
         
         l1.setBounds(140, 20, 600, 40);
-        add(l1);
+        p.add(l1);
         
         l2.setBounds(290, 70, 600, 30);
-        add(l2);
+        p.add(l2);
         
         l3.setBounds(100, 140, 100, 30);
-        add(l3);
+        p.add(l3);
         
         tf1.setBounds(100, 190, 200, 30);
-        add(tf1);
+        p.add(tf1);
         
         l4.setBounds(100, 240, 200, 30);
-        add(l4);
+        p.add(l4);
         
         tf2.setBounds(140, 20, 600, 30);
-        add(tf2);
+        p.add(tf2);
         
         l5.setBounds(100, 240, 200, 30);
-        add(l5);
+        p.add(l5);
         
         l13.setBounds(300, 240, 40, 30);
-        add(l13);
+        p.add(l13);
         
         c1.setBounds(340, 240, 60, 30);
-        add(c1);
+        p.add(c1);
         
         l14.setBounds(410, 240, 50, 30);
-        add(l14);
+        p.add(l14);
         
-       c2.setBounds(460, 240, 100, 30);
-        add(c2);
+        c2.setBounds(460, 240, 100, 30);
+        p.add(c2);
         
         l15.setBounds(570, 240, 40, 30);
-        add(l15);
+        p.add(l15);
         
         c3.setBounds(610, 240, 60, 30);
-        add(c3);
+        p.add(c3);
         
         l6.setBounds(100, 290, 200, 30);
-        add(l6);
+        p.add(l6);
         
         r1.setBounds(300, 290, 60, 30);
-        add(r1);
+        p.add(r1);
         
         r2.setBounds(450, 290, 90, 30);
-        add(r2);
+        p.add(r2);
         
         l7.setBounds(100, 340, 200, 30);
-        add(l7);
+        p.add(l7);
         
         tf3.setBounds(300, 340, 400, 30);
-        add(tf3);
+        p.add(tf3);
         
         l8.setBounds(100, 390, 200, 30);
-        add(l8);
+        p.add(l8);
         
         r3.setBounds(300, 390, 100, 30);
-        add(r3);
+        p.add(r3);
         
         r4.setBounds(450, 390, 100, 30);
-        add(r4);
+        p.add(r4);
         
         r5.setBounds(635, 390, 100, 30);
-        add(r5);
+        p.add(r5);
         
         
         l9.setBounds(100, 440, 200, 30);
-        add(l9);
+        p.add(l9);
         
         tf4.setBounds(300, 440, 200, 30);
-        add(tf4);
+        p.add(tf4);
         
         l10.setBounds(100, 490, 200, 30);
-        add(l10);
+        p.add(l10);
         
         tf5.setBounds(300, 490, 400, 30);
-        add(tf5);
+        p.add(tf5);
         
         l11.setBounds(100, 540, 200, 30);
-        add(l11);
+        p.add(l11);
         
         tf6.setBounds(300, 540, 400, 30);
-        add(tf6);
+        p.add(tf6);
         
         l12.setBounds(100, 590, 400, 30);
-        add(l12);
+        p.add(l12);
         
         tf7.setBounds(300, 490, 400, 30);
-        add(tf7);
+        p.add(tf7);
         
         b1.setBounds(620, 660, 80, 30);
-        add(b1);
+        p.add(b1);
         
-        b1.addActtionLintener(this);
-        
-        getContentPane().setBackground(Color.WHITE);
-        
-        setSize(450,450);
-        setLocation(500, 90);
-        setVisible(true);
-        
+      //  b1.addActtionLintener(this);
+        jf.setBackground(Color.WHITE);
+        jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        jf.setSize(800, 800);
+        jf.setLocation(500, 90);
+        jf.setVisible(true);
+        c.add(p);
     }
+   
     
+    public static void main(String args[])
+    {
+        SignUp z = new SignUp();
+        z.SignUp();
+    }
+}
+    
+
+ 
+    /*
     public void actionPerformed(ActionEvent ae)
     {
         String a = tf1.getText();
@@ -333,13 +347,4 @@ public class SignUp extends JFrame implements ActionListener {
             System.out.println("error: "+e);
         }
         
-    }
-    
-    public static void main(String args[])
-    {
-        new SignUp().setVisible(true);
-    }
-
-}
-    
-
+    }*/

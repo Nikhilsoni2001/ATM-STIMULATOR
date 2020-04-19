@@ -1,19 +1,21 @@
 package atm.simulator;
 
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
-import java.sql.*;
 
-public class FastCash extends JFrame implements ActionListener{
-    
-    JLabel l1,l2;
-    JTextField t1;
-    JButton b1,b2,b3,b4,b5,b6,b7;
-    
-    public void FastCash()
-    {
-        setFont(new Font("System", Font.BOLD ,22));
+import java.awt.*;
+import javax.swing.*;
+//import java.sql.*;
+
+public class FastCash{
+     
+         JFrame jf = new JFrame("Fastcash");
+         Container c = jf.getContentPane();
+         JPanel p = new JPanel();
+        JLabel l1,l2;
+        JTextField t1;
+        JButton b1,b2,b3,b4,b5,b6,b7;
+     
+        public void FastCash(){
+        /*setFont(new Font("System", Font.BOLD ,22));
         Font f = getFont();
         FontMetrics fm =getFontMetrics(f);
         int x = fm.stringWidth("FASTCASH");
@@ -23,6 +25,7 @@ public class FastCash extends JFrame implements ActionListener{
         String pad ="";
         pad  = String.format("%", w, "s",pad);
         setTitle(pad+"FASTCASH");
+        */
         
         l1= new JLabel("SELECT WITHDRAWL AMOUNT");
         l1.setFont(new Font("System",Font.BOLD,38));
@@ -68,55 +71,63 @@ public class FastCash extends JFrame implements ActionListener{
         b7.setBackground(Color.BLACK);
         b7.setForeground(Color.WHITE);
         
-        setLayeredPane(null);
+        p.setLayout(null);
         
         l2.setBounds(640, 10, 60, 40);
-        add(l2);
+        p.add(l2);
         
         t1.setBounds(710, 10, 60, 40);
-        add(t1);
+        p.add(t1);
         
-        l1.setBounds(620, 10, 80, 20);
-        add(l1);
+        l1.setBounds(130, 100, 800, 100);
+        p.add(l1);
         
         b1.setBounds(40, 250, 300, 60);
-        add(b1);
+        p.add(b1);
         
         b2.setBounds(440, 250, 300, 60);
-        add(b2);
+        p.add(b2);
         
         b3.setBounds(40, 360, 300, 60);
-        add(b3);
+        p.add(b3);
         
         b4.setBounds(440, 360, 300, 60);
-        add(b4);
+        p.add(b4);
         
         b5.setBounds(40, 470, 300, 60);
-        add(b5);
+        p.add(b5);
         
         b6.setBounds(440, 470, 300, 60);
-        add(b6);
+        p.add(b6);
         
         b7.setBounds(240, 600, 300, 60);
-        add(b7);
+        p.add(b7);
         
-        b1.addActionListener(this);
+        /*b1.addActionListener(this);
         b2.addActionListener(this);
         b3.addActionListener(this);
         b4.addActionListener(this);
         b5.addActionListener(this);
         b6.addActionListener(this);
         b7.addActionListener(this);
+        */
         
-        getContentPane().setBackground(Color.WHITE);
+        jf.setBackground(Color.WHITE);
+        jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        jf.setSize(800, 800);
+        jf.setLocation(500, 90);
+        jf.setVisible(true);
         
-        setSize(800, 800);
-        setLocation(500, 90);
-        setVisible(true);
-        
-    }
+        c.add(p);
+        }
+        public static void main(String args[])
+        {
+            FastCash z = new FastCash();
+            z.FastCash();
+        }
+}
     
-    public void actionPerformed(ActionEvent ae)
+    /*public void actionPerformed(ActionEvent ae)
     {
         try
         {
@@ -140,3 +151,5 @@ public class FastCash extends JFrame implements ActionListener{
         }
     }
 }
+}*/
+

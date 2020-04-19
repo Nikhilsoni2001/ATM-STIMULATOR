@@ -6,15 +6,19 @@ import javax.swing.*;
 import java.sql.*;
 import java.util.*;
 
-public class Transactions extends JFrame implements ActionListener
+public class Transactions
 {
    
+    JFrame jf = new JFrame("SignUp3");
+    Container c = jf.getContentPane();
+    JPanel p = new JPanel();
+    
     JLabel l1;
     JButton b1,b2,b3,b4,b5,b6,b7;
     
     public void Transactions()
     {
-        setFont(new Font("System", Font.BOLD ,22));
+     /*   setFont(new Font("System", Font.BOLD ,22));
         Font f = getFont();
         FontMetrics fm =getFontMetrics(f);
         int x = fm.stringWidth("TRANSACTION");
@@ -24,7 +28,7 @@ public class Transactions extends JFrame implements ActionListener
         String pad ="";
         pad  = String.format("%", w, "s",pad);
         setTitle(pad+"TRANSACTION");
-        
+       */ 
         
         
         l1=new JLabel("Please Select Your Transaction");
@@ -65,49 +69,57 @@ public class Transactions extends JFrame implements ActionListener
         b7.setBackground(Color.BLACK);
         b7.setForeground(Color.WHITE);
         
-        setLayout(null);
+        p.setLayout(null);
         
         l1.setBounds(100, 100, 700, 40);
-        add(l1);
+        p.add(l1);
         
         b1.setBounds(40, 250, 300, 60);
-        add(b1);
+        p.add(b1);
         
         b2.setBounds(440, 250, 300, 60);
-        add(b2);
+        p.add(b2);
         
         b3.setBounds(40, 360, 300, 60);
-        add(b3);
+        p.add(b3);
         
         b4.setBounds(440, 360, 300, 60);
-        add(b4);
+        p.add(b4);
         
         b5.setBounds(440, 470, 300, 60);
-        add(b5);
+        p.add(b5);
         
         b6.setBounds(440, 470, 300, 60);
-        add(b6);
+        p.add(b6);
         
         b7.setBounds(240, 600, 300, 60);
-        add(b7);
+        p.add(b7);
         
         
-        b1.addActionListener(this);
-        b2.addActionListener(this);
-        b3.addActionListener(this);
-        b4.addActionListener(this);
-        b5.addActionListener(this);
-        b6.addActionListener(this);
-        b7.addActionListener(this);
+//        b1.addActionListener(this);
+//        b2.addActionListener(this);
+//        b3.addActionListener(this);
+//        b4.addActionListener(this);
+//        b5.addActionListener(this);
+//        b6.addActionListener(this);
+//        b7.addActionListener(this);
         
-        getContentPane().setBackground(Color.WHITE);
+        jf.setBackground(Color.WHITE);
+        jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        jf.setSize(800, 800);
+        jf.setLocation(500, 90);
+        jf.setVisible(true);
         
-        setSize(800,800);
-        setLocation(500, 90);
-        setVisible(true);
+        c.add(p);
         
     }
-    
+     public static void main(String args[])
+          {
+              Transactions z = new Transactions();
+              z.Transactions();
+          }
+}
+ /*   
      public void actionPerformed(ActionEvent ae)
      {
          
@@ -163,8 +175,4 @@ public class Transactions extends JFrame implements ActionListener
              System.exit(0);
          }
     }
-     public static void main(String args[])
-          {
-              new Transactions().setVisible(true);
-          }
-}
+   */ 
